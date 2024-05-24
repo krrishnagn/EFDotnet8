@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build"
+		},
+		{
+			"type": "dotnet",
+			"task": "watch BackendProj",
+			"file": "C:\\Users\\krishnarajan.n\\Downloads\\Dotnet EF\\BackendProj\\BackendProj.csproj",
+			"problemMatcher": [],
+			"label": "dotnet: watch BackendProj"
+		},
+		{
+			"type": "dotnet",
+			"task": "clean",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "dotnet: clean"
+		}
+	]
+}
