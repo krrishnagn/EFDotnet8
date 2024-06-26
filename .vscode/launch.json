@@ -22,7 +22,8 @@
             },
             "sourceFileMap": {
                 "/Views": "${BackendProj}/Views"
-            }
+            },
+            "requireExactSource": true
         }
 
     ]
