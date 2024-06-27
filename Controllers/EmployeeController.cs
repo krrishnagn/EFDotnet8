@@ -36,10 +36,53 @@ namespace BackendProj.Controllers
             Response<int> response;
             try
             {
-                var result = _projectDBContext.EmpolyeesTable.Add(input);
-                _projectDBContext.SaveChanges();
-                int generatedId = result.Entity.EmpolyeeID;
-                response = new Response<int>(generatedId , "Employee Added successfully");
+                var empList = _projectDBContext.EmpolyeesTable.Where(x => x.Email == input.Email).ToList();
+                if(empList.Count == 0)
+                {
+                    if(input.EmpolyeeID == 0)
+                    {
+                        var result = _projectDBContext.EmpolyeesTable.Add(input);
+                        _projectDBContext.SaveChanges();
+                        int generatedId = result.Entity.EmpolyeeID;
+                        response = new Response<int>(generatedId , "Employee Added successfully");
+                        
+                    }
+                    else
+                    {
+                        var result = _projectDBContext.EmpolyeesTable.Update(input);
+                        _projectDBContext.SaveChanges();
+                        int generatedId = result.Entity.EmpolyeeID;
+                        response = new Response<int>(generatedId , "Employee Updated successfully");
+                    }
+                }
+                else
+                {
+                    response = new Response<int>(0 , "Email is Already Exists");
+                }
+                return Ok(response);
+                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("DeleteEmployee/{EmployeeID}")]
+        public ActionResult<Response<int>> DeleteEmployee(int EmployeeID)
+        {
+            Response<int> response;
+            try
+            {
+                var employee = _projectDBContext.EmpolyeesTable.Where(x => x.EmpolyeeID == EmployeeID).FirstOrDefault();
+                if(employee != null)
+                {
+                    var result = _projectDBContext.EmpolyeesTable.Remove(employee);
+                    response = new Response<int>(EmployeeID , "Employee Deleted successfully");
+                }
+                else
+                {
+                    response = new Response<int>(EmployeeID , "Employee Not Found");
+                }
                 return Ok(response);
             }
             catch (Exception ex)
