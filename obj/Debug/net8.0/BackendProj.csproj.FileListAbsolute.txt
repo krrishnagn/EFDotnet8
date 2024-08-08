@@ -135,3 +135,4 @@ C:\Users\krishnarajan.n\Downloads\Dotnet EF\BackendProj\bin\Debug\net8.0\runtime
 C:\Users\krishnarajan.n\Downloads\Dotnet EF\BackendProj\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\krishnarajan.n\Downloads\Dotnet EF\BackendProj\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\krishnarajan.n\Downloads\Dotnet EF\BackendProj\obj\Debug\net8.0\BackendProj.sourcelink.json
+C:\Users\krishnarajan.n\Downloads\Dotnet EF\BackendProj\bin\Debug\net8.0\MyProj.postman_collection.json

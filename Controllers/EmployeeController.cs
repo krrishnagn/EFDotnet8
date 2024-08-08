@@ -22,7 +22,7 @@ namespace BackendProj.Controllers
         {
             try
             {
-                var result = _projectDBContext.EmpolyeesTable.ToList();
+                var result = _projectDBContext.EmpolyeesTable.OrderByDescending(x => x.EmpolyeeID).ToList();
                 return StatusCode(200 ,result);
             }
             catch (Exception ex)
@@ -36,31 +36,29 @@ namespace BackendProj.Controllers
             Response<int> response;
             try
             {
-                var empList = _projectDBContext.EmpolyeesTable.Where(x => x.Email == input.Email).ToList();
-                if(empList.Count == 0)
+                if(input.EmpolyeeID == 0)
                 {
-                    if(input.EmpolyeeID == 0)
+                    var empList = _projectDBContext.EmpolyeesTable.Where(x => x.Email == input.Email).ToList();
+                    if(empList.Count == 0)
                     {
                         var result = _projectDBContext.EmpolyeesTable.Add(input);
                         _projectDBContext.SaveChanges();
                         int generatedId = result.Entity.EmpolyeeID;
                         response = new Response<int>(generatedId , "Employee Added successfully");
-                        
                     }
                     else
                     {
-                        var result = _projectDBContext.EmpolyeesTable.Update(input);
-                        _projectDBContext.SaveChanges();
-                        int generatedId = result.Entity.EmpolyeeID;
-                        response = new Response<int>(generatedId , "Employee Updated successfully");
-                    }
+                        response = new Response<int>(0 , "Email is Already Exists");
+                    }  
                 }
                 else
                 {
-                    response = new Response<int>(0 , "Email is Already Exists");
+                    var result = _projectDBContext.EmpolyeesTable.Update(input);
+                    _projectDBContext.SaveChanges();
+                    int generatedId = result.Entity.EmpolyeeID;
+                    response = new Response<int>(generatedId , "Employee Updated successfully");
                 }
                 return Ok(response);
-                
             }
             catch (Exception ex)
             {
@@ -77,6 +75,7 @@ namespace BackendProj.Controllers
                 if(employee != null)
                 {
                     var result = _projectDBContext.EmpolyeesTable.Remove(employee);
+                    _projectDBContext.SaveChanges();
                     response = new Response<int>(EmployeeID , "Employee Deleted successfully");
                 }
                 else
@@ -215,6 +214,78 @@ namespace BackendProj.Controllers
                     }
                 });
                 response = new Response<List<PositionList>>(Position , "Data Retrived");
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetMenu")]
+        public ActionResult<Response<List<MainMenu>>> GetMenuList()
+        {
+            Response<List<MainMenu>> response;
+            try
+            {
+                List<MainMenu> Position = new();
+                Position.AddRange(new List<MainMenu>
+                {
+                    new MainMenu
+                    {
+                        MainMenuID = 1,
+                        MenuName = "Home",
+                        Url="/Home",
+                        Icon="fa-fa-Home",
+                        subMenu =null
+                    },
+                    new MainMenu
+                    {
+                        MainMenuID = 2,
+                        MenuName = "Employee",
+                        Url="",
+                        Icon="fa-solid fa-person",
+                        subMenu =
+                        [
+                            new SubMenu
+                            {
+                                SubMenuID = 1,
+                                MainMenuID = 2,
+                                MenuName = "Empoyee List",
+                                Url = "/Home/EmployeeList",
+                                Icon="fa-solid fa-briefcase"
+                            },
+                            new SubMenu
+                            {
+                                SubMenuID = 2,
+                                MainMenuID = 2,
+                                MenuName = "Add Employee",
+                                Url = "/Home/AddEmployee",
+                                Icon="fa-solid fa-plus"
+                            }
+                        ]
+                    },
+                    new MainMenu
+                    {
+                        MainMenuID = 3,
+                        MenuName = "Profile",
+                        Url="",
+                        Icon="fa-solid fa-tag",
+                        subMenu =
+                        [
+                            new SubMenu
+                            {
+                                SubMenuID = 3,
+                                MainMenuID = 3,
+                                MenuName = "Edit Profile",
+                                Url = "/Home/EmployeeList",
+                                Icon="fa-solid fa-book"
+                            }
+                        ]
+                    }
+                });
+                response = new Response<List<MainMenu>>(Position , "Data Retrived");
                 return Ok(response);
 
             }

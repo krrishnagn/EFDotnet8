@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "478a8433-7340-47ab-a25c-a8b395ecff8c",
+		"name": "MyProj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7234/api/Employee/Login?Email=krishna@gmail.com&Password=krishna",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"api",
+						"Employee",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "Email",
+							"value": "krishna@gmail.com"
+						},
+						{
+							"key": "Password",
+							"value": "krishna"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://localhost:7234/api/Employee/Login?Email=krishna@gmail.com&Password=krishna",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7234/api/Employee/Login?Email=krishna@gmail.com&Password=krishna",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7234",
+							"path": [
+								"api",
+								"Employee",
+								"Login"
+							],
+							"query": [
+								{
+									"key": "Email",
+									"value": "krishna@gmail.com"
+								},
+								{
+									"key": "Password",
+									"value": "krishna"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 16:26:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"empolyeeID\": 2,\n    \"employeeNumber\": \"EMP7656\",\n    \"firstName\": \"Krishna\",\n    \"lastName\": \"GN\",\n    \"gender\": \"Male\",\n    \"dob\": \"1999-02-24T00:00:00\",\n    \"joiningDate\": \"2024-05-18\",\n    \"position\": \"Trainee\",\n    \"email\": \"krishna@gmail.com\",\n    \"password\": \"krishna\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GetEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7234/api/Employee/GetEmployees",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"api",
+						"Employee",
+						"GetEmployees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetEmployees",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7234/api/Employee/GetEmployees",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7234",
+							"path": [
+								"api",
+								"Employee",
+								"GetEmployees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jun 2024 16:26:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"empolyeeID\": 1,\n        \"employeeNumber\": null,\n        \"firstName\": \"Vasanth\",\n        \"lastName\": \"Mohan\",\n        \"gender\": null,\n        \"dob\": \"1998-12-23T00:00:00\",\n        \"joiningDate\": null,\n        \"position\": \"CEO\",\n        \"email\": null,\n        \"password\": null\n    },\n    {\n        \"empolyeeID\": 2,\n        \"employeeNumber\": \"EMP7656\",\n        \"firstName\": \"Krishna\",\n        \"lastName\": \"GN\",\n        \"gender\": \"Male\",\n        \"dob\": \"1999-02-24T00:00:00\",\n        \"joiningDate\": \"2024-05-18\",\n        \"position\": \"Trainee\",\n        \"email\": \"krishna@gmail.com\",\n        \"password\": \"krishna\"\n    },\n    {\n        \"empolyeeID\": 3,\n        \"employeeNumber\": \"EPM009876\",\n        \"firstName\": \"Sundarapandiyan\",\n        \"lastName\": \"DD\",\n        \"gender\": \"Male\",\n        \"dob\": \"1998-09-25T00:00:00\",\n        \"joiningDate\": \"2024-06-20\",\n        \"position\": \"Employee\",\n        \"email\": \"sundhar.d@kosoft.co\",\n        \"password\": \"sundhar\"\n    },\n    {\n        \"empolyeeID\": 4,\n        \"employeeNumber\": \"EPM00567\",\n        \"firstName\": \"Diya\",\n        \"lastName\": \"dDD\",\n        \"gender\": \"Female\",\n        \"dob\": \"2000-09-23T00:00:00\",\n        \"joiningDate\": \"2024-06-19\",\n        \"position\": \"Watchwoman\",\n        \"email\": \"diya@gmail.com\",\n        \"password\": \"diyaaa\"\n    },\n    {\n        \"empolyeeID\": 5,\n        \"employeeNumber\": \"EPM00343\",\n        \"firstName\": \"yogi\",\n        \"lastName\": \"babu\",\n        \"gender\": \"Male\",\n        \"dob\": \"1889-09-23T00:00:00\",\n        \"joiningDate\": \"2024-06-19\",\n        \"position\": \"Employee\",\n        \"email\": \"yogibabu@gmail.com\",\n        \"password\": \"yogibabu\"\n    },\n    {\n        \"empolyeeID\": 6,\n        \"employeeNumber\": \"EPM045645\",\n        \"firstName\": \"Vikram\",\n        \"lastName\": \"Ghost\",\n        \"gender\": \"Male\",\n        \"dob\": \"1960-04-11T00:00:00\",\n        \"joiningDate\": \"2024-06-04\",\n        \"position\": \"Manager\",\n        \"email\": \"vikramgost@gmail.com\",\n        \"password\": \"vikram\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "SaveEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"empolyeeID\": 0,\r\n    \"employeeNumber\": \"EMP7971\",\r\n    \"firstName\": \"black\",\r\n    \"lastName\": \"Widow\",\r\n    \"gender\": \"Female\",\r\n    \"dob\": \"1969-12-12\",\r\n    \"joiningDate\": \"2024-05-18\",\r\n    \"position\": \"Super figure\",\r\n    \"email\": \"widow@gmail.com\",\r\n    \"password\": \"widow\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7234/api/Employee/SaveEmployee",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"api",
+						"Employee",
+						"SaveEmployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPositionList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7234/api/Employee/GetPositionList",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"api",
+						"Employee",
+						"GetPositionList"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetPositionList",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7234/api/Employee/GetPositionList",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7234",
+							"path": [
+								"api",
+								"Employee",
+								"GetPositionList"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:38:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Data Retrived\",\n    \"errors\": null,\n    \"data\": [\n        {\n            \"positionID\": 1,\n            \"position\": \"Manager\",\n            \"description\": \"Chief Executive Officer\",\n            \"parentPositionID\": 0,\n            \"childPosition\": [\n                {\n                    \"positionID\": 2,\n                    \"position\": \"Manager Director\",\n                    \"description\": \"CEO\",\n                    \"parentPositionID\": 1\n                },\n                {\n                    \"positionID\": 11,\n                    \"position\": \"Assistant Manager\",\n                    \"description\": \"Assistant to the CEO\",\n                    \"parentPositionID\": 1\n                }\n            ]\n        },\n        {\n            \"positionID\": 3,\n            \"position\": \"CFO\",\n            \"description\": \"Chief Financial Officer\",\n            \"parentPositionID\": 0,\n            \"childPosition\": [\n                {\n                    \"positionID\": 4,\n                    \"position\": \"Finance Manager\",\n                    \"description\": \"Manager of Finance\",\n                    \"parentPositionID\": 3\n                },\n                {\n                    \"positionID\": 5,\n                    \"position\": \"Accountant\",\n                    \"description\": \"Senior Accountant\",\n                    \"parentPositionID\": 3\n                }\n            ]\n        },\n        {\n            \"positionID\": 6,\n            \"position\": \"Employees\",\n            \"description\": \"Daily Staffs\",\n            \"parentPositionID\": 0,\n            \"childPosition\": [\n                {\n                    \"positionID\": 7,\n                    \"position\": \"Trainee\",\n                    \"description\": \"Begginers\",\n                    \"parentPositionID\": 6\n                },\n                {\n                    \"positionID\": 9,\n                    \"position\": \"Software Engineers\",\n                    \"description\": \"Developers\",\n                    \"parentPositionID\": 6\n                },\n                {\n                    \"positionID\": 10,\n                    \"position\": \"Project Manager\",\n                    \"description\": \"Googling and OP\",\n                    \"parentPositionID\": 6\n                },\n                {\n                    \"positionID\": 11,\n                    \"position\": \"Reporting Manager\",\n                    \"description\": \"Full Time OP\",\n                    \"parentPositionID\": 6\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7234/api/Employee/DeleteEmployee/36",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"api",
+						"Employee",
+						"DeleteEmployee",
+						"36"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteEmployee",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7234/api/Employee/DeleteEmployee/36",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7234",
+							"path": [
+								"api",
+								"Employee",
+								"DeleteEmployee",
+								"36"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Jun 2024 07:21:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Employee Deleted successfully\",\n    \"errors\": null,\n    \"data\": 36\n}"
+				}
+			]
+		}
+	]
+}
